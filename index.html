@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Investment Calculator</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="./style.css">
+  
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Water</h5>
+                        <div class="form-group">
+                            <label>Water Customer Type:</label>
+                            <select class="form-control"id="waterCustomerType">
+                                <option value="0" aria-disabled="true">Select type</option>
+                                <option value="1">Single Family Rasident Inside</option>
+                                <option value="2">Single Family Rasident Outside</option>
+                                <option value="3">Multi-Family Rasident Inside</option>
+                                <option value="4">Multi-Family Rasident Outside</option>
+                                <option value="5">Commerical inside</option>
+                                <option value="6">Commerical Outside</option>
+                              </select>
+                            <!-- <input class="form-control" type="text" placeholder="Select One" id="waterCustomerType">  -->
+                        </div>
+                        <div class="form-group">
+                            <label>Size</label>
+                            <select class="form-control" id="waterSize">
+                                <option value="0" aria-disabled="true">Select water Size</option>
+                                <option value="1">5/8</option>
+                                <option value="2">3/4</option>
+                                <option value="3">1</option>
+                                <option value="4">1 1/2</option>
+                                <option value="5">Two</option>
+                                <option value="6">Three</option>
+                                <option value="7">Four</option>
+                                <option value="8">Six</option>
+                                <option value="4">Eight</option>
+                              </select>
+                             <!-- <input class="form-control" type="number" placeholder="Select One" id="size">  -->
+                        </div>
+                        <div class="form-group">
+                            <label>Usage</label>
+                            <input class="form-control" type="number" placeholder="00" id="waterUsage"> 
+                         </div>
+
+                    <h5 class="card-title">Sewer</h5>
+                    <div class="form-group">
+                        <label>Sewer Customer Type</label>
+                        <select class="form-control" name="Select" id="sewerCustomerType">
+                            <option value="0" aria-disabled="true">Select type</option>
+                            <option value="1">Single Family Rasident </option>
+                            <option value="2">Multi-Family Rasident  </option>
+                            <option value="3">Commerical light</option>
+                            <option value="4">Commerical Medium</option>
+                            <option value="5">Commerical Heavy</option>
+                          </select>
+
+                        <!-- <input class="form-control" type="text" placeholder="Select One" id="sewerCustomerType">  -->
+                    </div>
+                    <div class="form-group">
+                        <label>Usage</label>
+                        <input class="form-control" type="number" placeholder="00" id="sewerUsage"> 
+                    </div>
+
+                    <button class="btn btn-secondary col-md-12" onclick="calculate()">Calculate</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mt-4">
+            <div class="row" id="resultStartup">
+                <div class="col-md-12">
+                    <h1 class="text-center font-weight-bold">See what you could be saving</h1>
+                    <p class="text-center">Plug in a few quick numbers and watch your savings add up.</p>
+                    <img src="https://s3.amazonaws.com/slh-new-calculators/img/start.svg" alt="img" class="center" width="20%" height="auto" />
+                    <br />
+                    </div>
+            </div>
+            <div class="card d-none postResult" id="postResult" style="padding: 40px">
+                <div class="row">
+<!--                    <div class="col-md-12 mb-3 text-center">-->
+<!--                        <img src="./money.svg" alt="money" class="img-fluid" width="15%">-->
+<!--                    </div>-->
+
+                    <div class="col-md-12 mt-3">
+
+                         <p class="bold">Imagine a bright future ahead.  In <span class="bold result" id="years"></span> years, your investment can produce an estimated retirement savings worth:
+
+                            <span class="bold result retirementValue"></span></p>
+
+                    </div>
+                    <div class="col-md-4 mt-3 center">
+                        <h3 class="bold retirementValue">$40,000</h3>
+                        <span class="description text-justify p-0 m-0">Retirement savings</span>
+
+                    </div>
+                    <div class="col-md-4 mt-3 center">
+                        <h3 class="bold" id="contributions">$40,000</h3>
+                        <span class="description text-justify p-0 m-0">
+                           Total Contributions</span>
+
+                    </div>
+                    <div class="col-md-4 mt-3 center">
+                        <h3 class="bold" id="growth">$40,000</h3>
+                        <span class="description text-justify p-0 m-0">
+                           Total Growth</span>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card d-none mt-2 postResult" style="padding: 20px;">
+                <div  id="chart-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<script src="./logic.js"></script>
+
+<script src="./iframeResizer.contentWindow.min.js"></script>
+
+</body>
+</html>
