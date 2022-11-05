@@ -4,6 +4,21 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f5f5f5;
 }
+#clearButton{
+    padding: 3px;
+}
+#calculateButton{
+padding: 3px;
+}
+#total{
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+}
+
+
+
+
+
 
 .card {
     border-radius: 30px;
