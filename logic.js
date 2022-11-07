@@ -732,12 +732,12 @@ $("#clear").click(function () {
     document.getElementById('sewerUsage').value = '';
 });
 
-let waterSizeValueArray =[0,1,2,3,4,5,6,7,8,9];
+// let waterSizeValueArray =[0,1,2,3,4,5,6,7,8,9];
 
 function createOption() {
 let waterCustomerType = document.getElementById("waterCustomerType").value;
     if (waterCustomerType==1){
-        document.getElementById("waterSize").options.length = 0;
+        document.getElementById("waterSize").innerHTML = "";
         var newOptions = document.getElementById("waterSize");
 
         var option = document.createElement("option");
@@ -773,8 +773,8 @@ let waterCustomerType = document.getElementById("waterCustomerType").value;
         newOptions.add(option);
 
     }
-    else if (waterCustomerType==2){
-        document.getElementById("waterSize").options.length = 0;
+    else if (waterCustomerType==2){       
+         document.getElementById("waterSize").innerHTML = "";
         var newOptions = document.getElementById("waterSize");
         
         var option = document.createElement("option");
@@ -795,7 +795,7 @@ let waterCustomerType = document.getElementById("waterCustomerType").value;
     }
     else if (waterCustomerType== 3 || waterCustomerType==4 )
     {
-        document.getElementById("waterSize").options.length = 0;
+        document.getElementById("waterSize").innerHTML = "";
         var newOptions = document.getElementById("waterSize");
 
         var option = document.createElement("option");
@@ -838,13 +838,13 @@ let waterCustomerType = document.getElementById("waterCustomerType").value;
         option.value = "7";
         newOptions.add(option);
     }
-    if (waterCustomerType==5 || waterCustomerType==6){
-        document.getElementById("waterSize").options.length = 0;
+    else if (waterCustomerType==5 || waterCustomerType==6){
+        document.getElementById("waterSize").innerHTML = "";
         var newOptions = document.getElementById("waterSize");
         
         var option = document.createElement("option");
         option.text = "Select size";
-        option.value = "1";
+        option.value = "0";
         newOptions.add(option);
 
         var option = document.createElement("option");
@@ -892,6 +892,14 @@ let waterCustomerType = document.getElementById("waterCustomerType").value;
         option.value = "9";
         newOptions.add(option);
 
+    }
+    else if (waterCustomerType==0)
+    {
+        document.getElementById("waterSize").innerHTML = "";
+        var option = document.createElement("option");
+        option.text = "Select size";
+        option.value = "0";
+        newOptions.add(option);
     }
   }
 
