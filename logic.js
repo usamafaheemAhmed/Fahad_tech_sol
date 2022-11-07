@@ -723,11 +723,6 @@ document.getElementById('year2BillTotal').innerHTML = toComma(totalfy23rate);
 document.getElementById('year3BillTotal').innerHTML = toComma(totalfy24rate);
 document.getElementById('year5BillTotal').innerHTML = toComma(totalfy25rate);
 document.getElementById('year4BillTotal').innerHTML = toComma(totalfy26rate);
-
-
-
-
-
 }
 $("#clear").click(function () {
     document.getElementById('waterCustomerType').value = 0;
@@ -736,6 +731,177 @@ $("#clear").click(function () {
     document.getElementById('sewerCustomerType').value = 0;
     document.getElementById('sewerUsage').value = '';
 });
+
+let waterSizeValueArray =[0,1,2,3,4,5,6,7,8,9];
+
+function createOption() {
+let waterCustomerType = document.getElementById("waterCustomerType").value;
+    if (waterCustomerType==1){
+        document.getElementById("waterSize").options.length = 0;
+        var newOptions = document.getElementById("waterSize");
+
+        var option = document.createElement("option");
+        option.text = "Select size";
+        option.value="0";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "5/8";
+        option.value="1";
+        newOptions.add(option);
+        
+
+        var option = document.createElement("option");
+        option.text = "3/4";
+        option.value="2";
+        newOptions.add(option);
+        
+
+        var option = document.createElement("option");
+        option.text = "1";
+        option.value="3";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "1 1/2";
+        option.value="4";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "TWO";
+        option.value="5";
+        newOptions.add(option);
+
+    }
+    else if (waterCustomerType==2){
+        document.getElementById("waterSize").options.length = 0;
+        var newOptions = document.getElementById("waterSize");
+        
+        var option = document.createElement("option");
+        option.text = "Select size";
+        option.value="0";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "5/8";
+        option.value="1";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "3/4";
+        option.value="2";
+        newOptions.add(option);
+
+    }
+    else if (waterCustomerType== 3 || waterCustomerType==4 )
+    {
+        document.getElementById("waterSize").options.length = 0;
+        var newOptions = document.getElementById("waterSize");
+
+        var option = document.createElement("option");
+        option.text = "Select size";
+        option.value="0";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "5/8";
+        option.value="1";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "3/4";
+        option.value="2";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "1";
+        option.value = "3";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "1 1/2";
+        option.value = "4";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "TWO";
+        option.value = "5";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "Three";
+        option.value = "6";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "Four";
+        option.value = "7";
+        newOptions.add(option);
+    }
+    if (waterCustomerType==5 || waterCustomerType==6){
+        document.getElementById("waterSize").options.length = 0;
+        var newOptions = document.getElementById("waterSize");
+        
+        var option = document.createElement("option");
+        option.text = "Select size";
+        option.value = "1";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "5/8";
+        option.value = "1";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "3/4";
+        option.value = "2";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "1";
+        option.value = "3";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "1 1/2";
+        option.value = "4";
+        newOptions.add(option);
+
+        var option = document.createElement("option");
+        option.text = "TWO";
+        option.value = "5";
+        newOptions.add(option);
+        
+        var option = document.createElement("option");
+        option.text = "Three";
+        option.value = "6";
+        newOptions.add(option);
+        
+        var option = document.createElement("option");
+        option.text = "Four";
+        option.value = "7";
+        newOptions.add(option);
+        
+        var option = document.createElement("option");
+        option.text = "Six";
+        option.value = "8";
+        newOptions.add(option);
+        
+        var option = document.createElement("option");
+        option.text = "Eight";
+        option.value = "9";
+        newOptions.add(option);
+
+    }
+  }
+
+
+
+
+
+
+
+
 
 
 
