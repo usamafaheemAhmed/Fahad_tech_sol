@@ -17,7 +17,7 @@ function format(input) {
 var options = {
 
     series: [{
-        name: 'Investment Value',
+        name: 'future value',
         data: []
     }],
     colors: ["#ffb500",],
@@ -639,10 +639,11 @@ function calculate() {
 
     }
 
-    let element = document.getElementById("tableResult");
-    element.scrollIntoView(1500);
+   
     document.getElementById("resultStartup").style.display = "none";
     document.getElementById("tableResult").style.display = "block";
+    let element = document.getElementById("tableResult");
+    element.scrollIntoView(1500);
 
 // WaterfixedRow
 document.getElementById('waterFixedCurrent').innerHTML = toComma(currentRate);
@@ -727,8 +728,18 @@ document.getElementById('year3BillTotal').innerHTML = toComma(totalfy24rate);
 document.getElementById('year5BillTotal').innerHTML = toComma(totalfy25rate);
 document.getElementById('year4BillTotal').innerHTML = toComma(totalfy26rate);
 
-let totalBillarrya = [totalCurrent,totalfy22rate,totalfy23rate,totalfy24rate,totalfy24rate,totalfy25rate,totalfy26rate]
-
+let totalBillarray = [totalCurrent,totalfy22rate,totalfy23rate,totalfy24rate,totalfy24rate,totalfy25rate,totalfy26rate]
+let yeararray = [1,2,3,4,5];
+chart.updateOptions({
+    series : [
+        { data : [...totalBillarray]
+        }
+    ],
+    xaxis: {
+        categories: [...yeararray],
+        tickAmount: 6,
+    }
+});
 
 }
 $("#clear").click(function () {
