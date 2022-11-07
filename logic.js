@@ -509,7 +509,7 @@ function calculate() {
         fy25WaterUnitRate = 3.66;
         fy26WaterUnitRate = 3.95;
     }
-    else if ((waterCustomerType == 2) || (waterCustomerType == 4) || (waterCustomerType == 6)) {
+    else if ( waterCustomerType == 2 || waterCustomerType == 4 || waterCustomerType == 6) {
         currentWaterUnitRate = 3.88;
         fy22WaterUnitRate = 4.13;
         fy23WaterUnitRate = 4.54;
@@ -587,7 +587,7 @@ function calculate() {
         alert("Enter Sewer Usage");
         return false;
     }
-    else if ((sewerCustomerType1 == 1) || (sewerCustomerType1 == 2)) {
+    else if (sewerCustomerType1 == 1 || sewerCustomerType1 == 2) {
 
         currentUnitRateSewer = 9.15;
         fy22UnitRateSewer = 6.47;
@@ -632,48 +632,97 @@ function calculate() {
     }
     else {
 
-        currentRateSewer = 24.33;
-        fy22rateSewer = 27.60;
-        fy23rateSewer = 29.81;
-        fy24rateSewer = 31.00;
-        fy25rateSewer = 32.24;
-        fy26rateSewer = 33.53;
+        currentRateSewer = 0;
+        fy22rateSewer = 0;
+        fy23rateSewer = 0;
+        fy24rateSewer = 0;
+        fy25rateSewer = 0;
+        fy26rateSewer = 0;
 
     }
 
+// WaterfixedRow
+document.getElementById('waterFixedCurrent').innerHTML = toComma(currentRate);
+document.getElementById('waterFixedCurrentTotal').innerHTML = toComma(currentRate);
+document.getElementById('waterFixedYear1').innerHTML = toComma(fy22rate);
+document.getElementById('waterFixedYear1Total').innerHTML = toComma(fy22rate);
+document.getElementById('waterFixedYear2').innerHTML = toComma(fy23rate);
+document.getElementById('waterFixedYear2Total').innerHTML = toComma(fy23rate);
+document.getElementById('waterFixedYear3').innerHTML = toComma(fy24rate);
+document.getElementById('waterFixedYear3Total').innerHTML = toComma(fy24rate);
+document.getElementById('waterFixedYear4').innerHTML = toComma(fy25rate);
+document.getElementById('waterFixedYear4Total').innerHTML = toComma(fy25rate);
+document.getElementById('waterFixedYear5').innerHTML = toComma(fy26rate);
+document.getElementById('waterFixedYear5Total').innerHTML = toComma(fy26rate);
+// WaterVolumeRow
+document.getElementById('waterVolumeCurrent').innerHTML = toComma(currentWaterUnitRate);
+document.getElementById('waterVolumeCurrentTotal').innerHTML = toComma(currentWaterUnitRate * waterUsage1);
+document.getElementById('waterVolumeYear1').innerHTML = toComma(fy22WaterUnitRate);
+document.getElementById('waterVolumeYear1Total').innerHTML = toComma(fy22WaterUnitRate * waterUsage1);
+document.getElementById('waterVolumeYear2').innerHTML = toComma(fy23WaterUnitRate);
+document.getElementById('waterVolumeYear2Total').innerHTML = toComma(waterUsage1 * fy23WaterUnitRate);
+document.getElementById('waterVolumeYear3').innerHTML = toComma(fy24WaterUnitRate);
+document.getElementById('waterVolumeYear3Total').innerHTML = toComma(waterUsage1 * fy24WaterUnitRate);
+document.getElementById('waterVolumeYear4').innerHTML = toComma(fy25WaterUnitRate);
+document.getElementById('waterVolumeYear4Total').innerHTML = toComma(waterUsage1 * fy25WaterUnitRate);
+document.getElementById('waterVolumeYear5').innerHTML = toComma(fy26WaterUnitRate);
+document.getElementById('waterVolumeYear5Total').innerHTML = toComma(waterUsage1 * fy26WaterUnitRate);
+//sewer Customer Fixed row
+document.getElementById('sewerFixedCurrent').innerHTML = toComma(currentRateSewer);
+document.getElementById('sewerFixedCurrentTotal').innerHTML = toComma(currentRateSewer);
+document.getElementById('sewerFixedYear1').innerHTML = toComma(fy22RateSewer);
+document.getElementById('sewerFixedYear1Total').innerHTML = toComma(fy22RateSewer);
+document.getElementById('sewerFixedYear2').innerHTML = toComma(fy23RateSewer);
+document.getElementById('sewerFixedYear2Total').innerHTML = toComma(fy23RateSewer);
+document.getElementById('sewerFixedYear3').innerHTML = toComma(fy24RateSewer);
+document.getElementById('sewerFixedYear3Total').innerHTML = toComma(fy24RateSewer);
+document.getElementById('sewerFixedYear4').innerHTML = toComma(fy25RateSewer);
+document.getElementById('sewerFixedYear4Total').innerHTML = toComma(fy25RateSewer);
+document.getElementById('sewerFixedYear5').innerHTML = toComma(fy26RateSewer);
+document.getElementById('sewerFixedYear5Total').innerHTML = toComma(fy26RateSewer);
+//sewer monthly charger
+document.getElementById('sewerMonthlyCurrent').innerHTML = toComma(2.87);
+document.getElementById('sewerMonthlyCurrentTotal').innerHTML = toComma(2.87);
+document.getElementById('sewerMonthlyYear1').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear1Total').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear2').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear2Total').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear3').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear3Total').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear4').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear4Total').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear5').innerHTML = toComma(0.00);
+document.getElementById('sewerMonthlyYear5Total').innerHTML = toComma(0.00);
+
+//sewer unit Price
+document.getElementById('sewerVolumCurrent').innerHTML = toComma(currentUnitRateSewer);
+document.getElementById('sewerVolumCurrentTotal').innerHTML = toComma(currentUnitRateSewer * sewerUsage1);
+document.getElementById('sewerVolumYear1').innerHTML = toComma(fy22UnitRateSewer );
+document.getElementById('sewerVolumYear1Total').innerHTML = toComma(fy22UnitRateSewer * sewerUsage1);
+document.getElementById('sewerVolumYear2').innerHTML = toComma(fy23UnitRateSewer);
+document.getElementById('sewerVolumYear2Total').innerHTML = toComma(fy23UnitRateSewer * sewerUsage1);
+document.getElementById('sewerVolumYear3').innerHTML = toComma(fy24UnitRateSewer);
+document.getElementById('sewerVolumYear3Total').innerHTML = toComma(fy24UnitRateSewer * sewerUsage1);
+document.getElementById('sewerVolumYear4').innerHTML = toComma(fy25UnitRateSewer);
+document.getElementById('sewerVolumYear4Total').innerHTML = toComma(fy25UnitRateSewer * sewerUsage1);
+document.getElementById('sewerVolumYear5').innerHTML = toComma(fy26UnitRateSewer);
+document.getElementById('sewerVolumYear5Total').innerHTML = toComma(fy26UnitRateSewer * sewerUsage1);
+
+//Billing total row
+let totalCurrent = currentRate + (currentWaterUnitRate * waterUsage1) + currentRateSewer + 2.87 + (currentUnitRateSewer * sewerUsage1);
+let totalfy22rate = fy22rate + ( fy22WaterUnitRate* waterUsage1) + fy22RateSewer + (fy22UnitRateSewer * sewerUsage1);
+let totalfy23rate = fy23rate + ( fy23WaterUnitRate* waterUsage1) + fy23RateSewer + (fy23UnitRateSewer * sewerUsage1);
+let totalfy24rate = fy24rate + ( fy24WaterUnitRate* waterUsage1) + fy24RateSewer + (fy24UnitRateSewer * sewerUsage1);
+let totalfy25rate = fy25rate + ( fy25WaterUnitRate* waterUsage1) + fy25RateSewer + (fy25UnitRateSewer * sewerUsage1);
+let totalfy26rate = fy26rate + ( fy26WaterUnitRate* waterUsage1) + fy26RateSewer + (fy26UnitRateSewer * sewerUsage1);
 
 
-
-
-
-    // if ((waterCustomerType1 == '1') && (waterSize1 == '1')) {
-    //     let table2Row = document.getElementById("table1").rows[2].cells; 
-    //     table2Row[1].innerHTML = 30.28;
-    //     table2Row[2].innerHTML = 30.28;
-    //     table2Row[3].innerHTML = 34.11;
-    //     table2Row[4].innerHTML = 34.11;
-    //     table2Row[5].innerHTML = 37.52;
-    //     table2Row[6].innerHTML = 37.52;
-    //     table2Row[7].innerHTML = 41.28;
-    //     table2Row[8].innerHTML = 41.28;
-    //     table2Row[9].innerHTML = 45.4;
-    //     table2Row[10].innerHTML = 45.4;
-    //     table2Row[11].innerHTML = 49.04;
-    //     table2Row[12].innerHTML = 49.04;
-    //     alert(waterUsage1);
-    //     let table3Row = document.getElementById("table1").rows[3].cells;
-    //     // let waterUsagerate = waterUsage1 * 2.64;
-    //     alert("ok=" + waterUsagerate + 'table value=' + table3Row);
-    //     table3Row[1].innerHTML = '2.64';
-    //     table3Row[2].innerHTML = waterUsage1;
-    //     table3Row[1].innerHTML = '2.64';
-    //     table3Row[2].innerHTML = waterUsagerate.toFixed(2);
-    //     let total=table2Row[2].val+table3Row[2].value;
-    //     alert('total'+total);
-    //     let table7Row = document.getElementById("table1").rows[7].cells;
-    //     table7Row[1].innerHTML=total;
-
-    // }
+document.getElementById('currentBillTotal').innerHTML = toComma(totalCurrent);
+document.getElementById('year1BillTotal').innerHTML = toComma(totalfy22rate);
+document.getElementById('year2BillTotal').innerHTML = toComma(totalfy23rate);
+document.getElementById('year3BillTotal').innerHTML = toComma(totalfy24rate);
+document.getElementById('year5BillTotal').innerHTML = toComma(totalfy25rate);
+document.getElementById('year4BillTotal').innerHTML = toComma(totalfy26rate);
 
 
 
@@ -688,36 +737,6 @@ $("#clear").click(function () {
     document.getElementById('sewerUsage').value = '';
 });
 
-// var xyValues = [
-//     {x:50, y:7},
-//     {x:60, y:8},
-//     {x:70, y:8},
-//     {x:80, y:9},
-//     {x:90, y:9},
-//     {x:100, y:9},
-//     {x:110, y:10},
-//     {x:120, y:11},
-//     {x:130, y:14},
-//     {x:140, y:14},
-//     {x:150, y:15}
-//   ];
 
-//   new Chart("myChart", {
-//     type: "scatter",
-//     data: {
-//       datasets: [{
-//         pointRadius: 4,
-//         pointBackgroundColor: "rgb(0,0,255)",
-//         data: xyValues
-//       }]
-//     },
-//     options: {
-//       legend: {display: false},
-//       scales: {
-//         xAxes: [{ticks: {min: 40, max:160}}],
-//         yAxes: [{ticks: {min: 6, max:16}}],
-//       }
-//     }
-//   });
 
-let toComma = (x) => "$ " + x.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+let toComma = (x) => "$ " + x.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

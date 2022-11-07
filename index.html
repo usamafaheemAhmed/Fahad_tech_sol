@@ -24,80 +24,103 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-4 mt-4">
-                    <div class="card">
+                <div class="col-md-12">
+                    <div class="card mt-4">
                         <div class="card-body">
-                            <h5 class="card-title">Water</h5>
-                            <div class="form-group">
-                                <label>Water Customer Type:</label>
-                                <select class="form-control"
-                                    id="waterCustomerType">
-                                    <option value="0" aria-disabled="true">Select
-                                        type</option>
-                                    <option value="1">Single Family Resident
-                                        Inside</option>
-                                    <option value="2">Single Family Resident
-                                        Outside</option>
-                                    <option value="3">Multi-Family Resident
-                                        Inside</option>
-                                    <option value="4">Multi-Family Resident
-                                        Outside</option>
-                                    <option value="5">Commerical inside</option>
-                                    <option value="6">Commerical Outside</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Size</label>
-                                <select class="form-control" id="waterSize">
-                                    <option value="0" aria-disabled="true">Select
-                                        water Size</option>
-                                    <option value="1">5/8</option>
-                                    <option value="2">3/4</option>
-                                    <option value="3">1</option>
-                                    <option value="4">1 1/2</option>
-                                    <option value="5">Two</option>
-                                    <option value="6">Three</option>
-                                    <option value="7">Four</option>
-                                    <option value="8">Six</option>
-                                    <option value="9">Eight</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Usage</label>
-                                <input class="form-control" type="number"
-                                    placeholder="00" id="waterUsage">
-                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="card-title">Water</h5>
+                                    <div class="form-group">
+                                        <label>Water Customer Type:</label>
+                                        <select class="form-control"
+                                            id="waterCustomerType">
+                                            <option value="0"
+                                                aria-disabled="true">Select
+                                                type</option>
+                                            <option value="1">Single Family
+                                                Resident
+                                                Inside</option>
+                                            <option value="2">Single Family
+                                                Resident
+                                                Outside</option>
+                                            <option value="3">Multi-Family
+                                                Resident
+                                                Inside</option>
+                                            <option value="4">Multi-Family
+                                                Resident
+                                                Outside</option>
+                                            <option value="5">Commercial inside</option>
+                                            <option value="6">Commercial Outside</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Size</label>
+                                        <select class="form-control"
+                                            id="waterSize">
+                                            <option value="0"
+                                                aria-disabled="true">Select
+                                                water Size</option>
+                                            <option value="1">5/8</option>
+                                            <option value="2">3/4</option>
+                                            <option value="3">1</option>
+                                            <option value="4">1 1/2</option>
+                                            <option value="5">Two</option>
+                                            <option value="6">Three</option>
+                                            <option value="7">Four</option>
+                                            <option value="8">Six</option>
+                                            <option value="9">Eight</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Usage</label>
+                                        <input class="form-control"
+                                            type="number"
+                                            placeholder="00" id="waterUsage">
+                                    </div>
+                                </div>
 
-                            <h5 class="card-title">Sewer</h5>
-                            <div class="form-group">
-                                <label>Sewer Customer Type</label>
-                                <select class="form-control" name="Select"
-                                    id="sewerCustomerType">
-                                    <option value="0" aria-disabled="true">Select
-                                        type</option>
-                                    <option value="1">Single Family Rasident
-                                    </option>
-                                    <option value="2">Multi-Family Rasident
-                                    </option>
-                                    <option value="3">Commerical light</option>
-                                    <option value="4">Commerical Medium</option>
-                                    <option value="5">Commerical Heavy</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Usage</label>
-                                <input class="form-control" type="number"
-                                    placeholder="00" id="sewerUsage">
-                            </div>
-                             <div class="form-row" id="calculateButton">
-                                <button class="btn btn-secondary col-md-12"
-                                    onclick="calculate()">Calculate</button>
-                            </div>
-                            <div class="form-row" id="clearButton">
-                                <button class="btn btn-danger col-md-12"
-                                    id="clear">Clear</button>
-                            </div>
-                           
+
+                                <div class="col-md-6">
+                                    <h5 class="card-title">Sewer</h5>
+                                    <div class="form-group">
+                                        <label>Sewer Customer Type</label>
+                                        <select class="form-control"
+                                            name="Select"
+                                            id="sewerCustomerType">
+                                            <option value="0"
+                                                aria-disabled="true">Select
+                                                type</option>
+                                            <option value="1">Single Family
+                                                Resident
+                                            </option>
+                                            <option value="2">Multi-Family
+                                                Resident
+                                            </option>
+                                            <option value="3">Commercial light</option>
+                                            <option value="4">Commercial Medium</option>
+                                            <option value="5">Commercial Heavy</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Usage</label>
+                                        <input class="form-control"
+                                            type="number"
+                                            placeholder="00" id="sewerUsage">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 ">
+                                    <button class="btn btn-danger col-md-2
+                                        float-right m-3"
+                                        id="clear">Clear</button>
+                                    <button class="btn btn-secondary col-md-2
+                                        m-3 float-right"
+                                        onclick="calculate()">Calculate</button>
+                                </div> </div>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -105,8 +128,9 @@
 
 
 
-                <div class="col-md-8 mt-4"  id="resultStartup">
+                <div class="col-md-12 mt-4" id="resultStartup">
                     <div class="row">
+
                         <div class="col-md-12">
                             <h1 class="text-center font-weight-bold">See
                                 what
@@ -169,150 +193,150 @@
                     </div>
                 </div>
 
-                    <div class="col-md-8 mt-4" id="tableResult">
+                <div class="col-md-12 mt-4" id="tableResult">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
-                            
-                                <thead>
-                                    <tr class="text-center">
-                                        <th></th>
-                                        <th colspan="2">Current Rate</th>
-                                        <th colspan="2">Year 1</th>
-                                        <th colspan="2">Year 2</th>
-                                        <th colspan="2">Year 3</th>
-                                        <th colspan="2">Year 4</th>
-                                        <th colspan="2">Year 5</th>
-                                    </tr>
-                                </thead>
-                                <thead id="tablehead">
-                                    <tr class="text-center">
-                                        <th></th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                        <th>Rate</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="text-center"
-                                        id="waterFixedCharge">
-                                        <td>Water Fixed Service Charge</td>
-                                        <td id="waterFixedCurrent"></td>
-                                        <td id="waterFixedCurrenttotal"></td>
-                                        <td id="waterFixedYear1"></td>
-                                        <td id="waterFixedYear1Total"></td>
-                                        <td id="waterFixedYear2"></td>
-                                        <td id="waterFixedYear2Total"></td>
-                                        <td id="waterFixedYear3"></td>
-                                        <td id="waterFixedYear3Total"></td>
-                                        <td id="waterFixedYear4"></td>
-                                        <td id="waterFixedYear4Total"></td>
-                                        <td id="waterFixedYear5"></td>
-                                        <td id="waterFixedYear5Total"></td>
-                                    </tr>
-                                    <tr class="text-center"
-                                        id="waterVolumetricCharge">
-                                        <td>Water Volumetric Charge</td>
-                                        <td id="waterVolumeCurrent"></td>
-                                        <td id="waterVolumeCurrentToatl"></td>
-                                        <td id="waterVolumeYear1"></td>
-                                        <td id="waterVolumeYear1Total"></td>
-                                        <td id="waterVolumeYear2"></td>
-                                        <td id="waterVolumeYear2Total"></td>
-                                        <td id="waterVolumeYear3"></td>
-                                        <td id="waterVolumeYear3Total"></td>
-                                        <td id="waterVolumeYear4"></td>
-                                        <td id="waterVolumeYear4Total"></td>
-                                        <td id="waterVolumeYear5"></td>
-                                        <td id="waterVolumeYear5total"></td>
-                                    </tr>
-                                    <tr class="text-center"
-                                        id="sewerMonthlyAccountCharge">
-                                        <td>Sewer Monthly Account Charge</td>
-                                        <td id="sewerMonthlyCurrent"></td>
-                                        <td id="sewerMonthlyCurrentTotal"></td>
-                                        <td id="sewerMonthlyYear1"></td>
-                                        <td id="sewerMonthlyYear1Total"></td>
-                                        <td id="sewerMonthlyYear2"></td>
-                                        <td id="sewerMonthlyYear2Total"></td>
-                                        <td id="sewerMonthlyYear3"></td>
-                                        <td id="sewerMonthlyYear3Total"></td>
-                                        <td id="sewerMonthlyYear4"></td>
-                                        <td id="sewerMonthlyYear4Total"></td>
-                                        <td id="sewerMonthlyYear5"></td>
-                                        <td id="sewerMonthlyYear5Total"></td>
-                                    </tr>
-                                    <tr class="text-center"
-                                        id="sewerFixedCharge">
-                                        <td>Sewer Fixed Charge</td>
-                                        <td id="sewerFixedCurrent"></td>
-                                        <td id="sewerFixedCurrentTotal"></td>
-                                        <td id="sewerFixedYear1"></td>
-                                        <td id="sewerFixedYear1Total"></td>
-                                        <td id="sewerFixedYear2"></td>
-                                        <td id="sewerFixedYear2Total"></td>
-                                        <td id="sewerFixedYear3"></td>
-                                        <td id="sewerFixedYear3Total"></td>
-                                        <td id="sewerFixedYear4"></td>
-                                        <td id="sewerFixedYear4Total"></td>
-                                        <td id="sewerFixedYear5"></td>
-                                        <td id="sewerFixedYear5Total"></td>
-                                    </tr>
-                                    <tr class="text-center"
-                                        id="sewerVolumetricCharge">
-                                        <td>Sewer Volumetric Charge</td>
-                                        <td id="sewerVolumCurrent"></td>
-                                        <td id="sewerVolumCurrentTotal"> </td>
-                                        <td id="sewerVolumYear1"></td>
-                                        <td id="sewerVolumYear1Total"></td>
-                                        <td id="sewerVolumYear2"></td>
-                                        <td id="sewerVolumYear2Total"></td>
-                                        <td id="sewerVolumYear3"></td>
-                                        <td id="sewerVolumYear3Total"></td>
-                                        <td id="sewerVolumYear4"></td>
-                                        <td id="sewerVolumYear4Total"></td>
-                                        <td id="sewerVolumYear5"></td>
-                                        <td id="sewerVolumYear5Total"></td>
-                                    </tr>
-                                    <tr class="text-center text-bold"
-                                        id="total">
-                                        <td>Bill Total</td>
-                                        <td colspan="2" id="currentBillTotal"></td>
-                                        <td colspan="2" id="year1BillTotal"></td>
-                                        <td colspan="2" id="year2BillTotal"></td>
-                                        <td colspan="2" id="year3BillTotal"></td>
-                                        <td colspan="2" id="year4BillTotal"></td>
-                                        <td colspan="2" id="year5BillTotal"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table class="table table-bordered table-hover
+                            table-striped">
+
+                            <thead>
+                                <tr class="text-center">
+                                    <th></th>
+                                    <th colspan="2">Current Rate</th>
+                                    <th colspan="2">Year 1</th>
+                                    <th colspan="2">Year 2</th>
+                                    <th colspan="2">Year 3</th>
+                                    <th colspan="2">Year 4</th>
+                                    <th colspan="2">Year 5</th>
+                                </tr>
+                            </thead>
+                            <thead id="tablehead">
+                                <tr class="text-center">
+                                    <th></th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                    <th>Rate</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size:12px">
+                                <tr class="text-center"
+                                    id="waterFixedCharge">
+                                    <td>Water Fixed Service Charge</td>
+                                    <td id="waterFixedCurrent"></td>
+                                    <td id="waterFixedCurrentTotal"></td>
+                                    <td id="waterFixedYear1"></td>
+                                    <td id="waterFixedYear1Total"></td>
+                                    <td id="waterFixedYear2"></td>
+                                    <td id="waterFixedYear2Total"></td>
+                                    <td id="waterFixedYear3"></td>
+                                    <td id="waterFixedYear3Total"></td>
+                                    <td id="waterFixedYear4"></td>
+                                    <td id="waterFixedYear4Total"></td>
+                                    <td id="waterFixedYear5"></td>
+                                    <td id="waterFixedYear5Total"></td>
+                                </tr>
+                                <tr class="text-center"
+                                    id="waterVolumetricCharge">
+                                    <td>Water Volumetric Charge</td>
+                                    <td id="waterVolumeCurrent"></td>
+                                    <td id="waterVolumeCurrentTotal"></td>
+                                    <td id="waterVolumeYear1"></td>
+                                    <td id="waterVolumeYear1Total"></td>
+                                    <td id="waterVolumeYear2"></td>
+                                    <td id="waterVolumeYear2Total"></td>
+                                    <td id="waterVolumeYear3"></td>
+                                    <td id="waterVolumeYear3Total"></td>
+                                    <td id="waterVolumeYear4"></td>
+                                    <td id="waterVolumeYear4Total"></td>
+                                    <td id="waterVolumeYear5"></td>
+                                    <td id="waterVolumeYear5Total"></td>
+                                </tr>
+                                <tr class="text-center"
+                                    id="sewerMonthlyAccountCharge">
+                                    <td>Sewer Monthly Account Charge</td>
+                                    <td id="sewerMonthlyCurrent"></td>
+                                    <td id="sewerMonthlyCurrentTotal"></td>
+                                    <td id="sewerMonthlyYear1"></td>
+                                    <td id="sewerMonthlyYear1Total"></td>
+                                    <td id="sewerMonthlyYear2"></td>
+                                    <td id="sewerMonthlyYear2Total"></td>
+                                    <td id="sewerMonthlyYear3"></td>
+                                    <td id="sewerMonthlyYear3Total"></td>
+                                    <td id="sewerMonthlyYear4"></td>
+                                    <td id="sewerMonthlyYear4Total"></td>
+                                    <td id="sewerMonthlyYear5"></td>
+                                    <td id="sewerMonthlyYear5Total"></td>
+                                </tr>
+                                <tr class="text-center"
+                                    id="sewerFixedCharge">
+                                    <td>Sewer Fixed Charge</td>
+                                    <td id="sewerFixedCurrent"></td>
+                                    <td id="sewerFixedCurrentTotal"></td>
+                                    <td id="sewerFixedYear1"></td>
+                                    <td id="sewerFixedYear1Total"></td>
+                                    <td id="sewerFixedYear2"></td>
+                                    <td id="sewerFixedYear2Total"></td>
+                                    <td id="sewerFixedYear3"></td>
+                                    <td id="sewerFixedYear3Total"></td>
+                                    <td id="sewerFixedYear4"></td>
+                                    <td id="sewerFixedYear4Total"></td>
+                                    <td id="sewerFixedYear5"></td>
+                                    <td id="sewerFixedYear5Total"></td>
+                                </tr>
+                                <tr class="text-center"
+                                    id="sewerVolumetricCharge">
+                                    <td>Sewer Volumetric Charge</td>
+                                    <td id="sewerVolumCurrent"></td>
+                                    <td id="sewerVolumCurrentTotal"> </td>
+                                    <td id="sewerVolumYear1"></td>
+                                    <td id="sewerVolumYear1Total"></td>
+                                    <td id="sewerVolumYear2"></td>
+                                    <td id="sewerVolumYear2Total"></td>
+                                    <td id="sewerVolumYear3"></td>
+                                    <td id="sewerVolumYear3Total"></td>
+                                    <td id="sewerVolumYear4"></td>
+                                    <td id="sewerVolumYear4Total"></td>
+                                    <td id="sewerVolumYear5"></td>
+                                    <td id="sewerVolumYear5Total"></td>
+                                </tr>
+                                <tr class="text-center text-bold"
+                                    id="total">
+                                    <td>Bill Total</td>
+                                    <td colspan="2" id="currentBillTotal"></td>
+                                    <td colspan="2" id="year1BillTotal"></td>
+                                    <td colspan="2" id="year2BillTotal"></td>
+                                    <td colspan="2" id="year3BillTotal"></td>
+                                    <td colspan="2" id="year4BillTotal"></td>
+                                    <td colspan="2" id="year5BillTotal"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas> -->
-                    
                 </div>
+                <!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas> -->
             </div>
+        </div>
 
-            <script crossorigin="anonymous"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-                src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script crossorigin="anonymous"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-            <script crossorigin="anonymous"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-            <script src="./logic.js"></script>
+        <script crossorigin="anonymous"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="./logic.js"></script>
 
-            <script src="./iframeResizer.contentWindow.min.js"></script>
-        </body>
-    </html>
+        <script src="./iframeResizer.contentWindow.min.js"></script>
+    </body>
+</html>
