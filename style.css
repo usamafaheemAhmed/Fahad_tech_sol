@@ -92,6 +92,10 @@ label {
     border-radius: 30px;
     height: 56px;
 }
+.btn.btn-danger {
+    border-radius: 30px;
+    height: 56px;
+}
 
 .form-control {
     padding: 16px;
@@ -265,3 +269,6 @@ input[type=number] {
     }
 }
 
+#tableResult{
+    display:none;
+}

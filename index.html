@@ -34,13 +34,13 @@
                                     id="waterCustomerType">
                                     <option value="0" aria-disabled="true">Select
                                         type</option>
-                                    <option value="1">Single Family Rasident
+                                    <option value="1">Single Family Resident
                                         Inside</option>
-                                    <option value="2">Single Family Rasident
+                                    <option value="2">Single Family Resident
                                         Outside</option>
-                                    <option value="3">Multi-Family Rasident
+                                    <option value="3">Multi-Family Resident
                                         Inside</option>
-                                    <option value="4">Multi-Family Rasident
+                                    <option value="4">Multi-Family Resident
                                         Outside</option>
                                     <option value="5">Commerical inside</option>
                                     <option value="6">Commerical Outside</option>
@@ -59,7 +59,7 @@
                                     <option value="6">Three</option>
                                     <option value="7">Four</option>
                                     <option value="8">Six</option>
-                                    <option value="4">Eight</option>
+                                    <option value="9">Eight</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -89,22 +89,90 @@
                                 <input class="form-control" type="number"
                                     placeholder="00" id="sewerUsage">
                             </div>
-                            <div class="form-row" id="clearButton">
-                                <button class="btn btn-secondary col-md-12"
-                                    id="clear">Clear</button>
-                            </div>
-                            <div class="form-row" id="calculateButton">
+                             <div class="form-row" id="calculateButton">
                                 <button class="btn btn-secondary col-md-12"
                                     onclick="calculate()">Calculate</button>
                             </div>
+                            <div class="form-row" id="clearButton">
+                                <button class="btn btn-danger col-md-12"
+                                    id="clear">Clear</button>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 p-3">
+
+
+
+                <div class="col-md-8 mt-4"  id="resultStartup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center font-weight-bold">See
+                                what
+                                you could be saving</h1>
+                            <p class="text-center">Plug in a few quick
+                                numbers
+                                and watch your savings add up.</p>
+                            <img
+                                src="https://s3.amazonaws.com/slh-new-calculators/img/start.svg"
+                                alt="img" class="center" width="20%"
+                                height="auto" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="card d-none postResult" id="postResult"
+                        style="padding: 40px">
+                        <div class="row">
+                            <!--                    <div class="col-md-12 mb-3 text-center">-->
+                            <!--                        <img src="./money.svg" alt="money" class="img-fluid" width="15%">-->
+                            <!--                    </div>-->
+
+                            <div class="col-md-12 mt-3">
+
+                                <p class="bold">Imagine a bright future
+                                    ahead.
+                                    In <span class="bold result" id="years"></span>
+                                    years, your investment can produce an
+                                    estimated retirement savings worth:
+                                    <span class="bold result
+                                        retirementValue"></span></p>
+                            </div>
+                            <div class="col-md-4 mt-3 center">
+                                <h3 class="bold retirementValue">$40,000</h3>
+                                <span class="description text-justify p-0
+                                    m-0">Retirement
+                                    savings</span>
+
+                            </div>
+                            <div class="col-md-4 mt-3 center">
+                                <h3 class="bold" id="contributions">$40,000</h3>
+                                <span class="description text-justify p-0
+                                    m-0">
+                                    Total Contributions</span>
+
+                            </div>
+                            <div class="col-md-4 mt-3 center">
+                                <h3 class="bold" id="growth">$40,000</h3>
+                                <span class="description text-justify p-0
+                                    m-0">
+                                    Total Growth</span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card d-none mt-2 postResult" style="padding:
+                        20px;">
+                        <div id="chart-2"></div>
+                    </div>
+                </div>
+
+                    <div class="col-md-8 mt-4" id="tableResult">
                     <div class="table-responsive">
-                        <table class="table-hover">
-                            <table id="table1" class="table table-hover">
+                        <table class="table table-bordered table-hover table-striped">
+                            
                                 <thead>
                                     <tr class="text-center">
                                         <th></th>
@@ -137,161 +205,99 @@
                                     <tr class="text-center"
                                         id="waterFixedCharge">
                                         <td>Water Fixed Service Charge</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td id="waterFixedCurrent"></td>
+                                        <td id="waterFixedCurrenttotal"></td>
+                                        <td id="waterFixedYear1"></td>
+                                        <td id="waterFixedYear1Total"></td>
+                                        <td id="waterFixedYear2"></td>
+                                        <td id="waterFixedYear2Total"></td>
+                                        <td id="waterFixedYear3"></td>
+                                        <td id="waterFixedYear3Total"></td>
+                                        <td id="waterFixedYear4"></td>
+                                        <td id="waterFixedYear4Total"></td>
+                                        <td id="waterFixedYear5"></td>
+                                        <td id="waterFixedYear5Total"></td>
                                     </tr>
                                     <tr class="text-center"
                                         id="waterVolumetricCharge">
                                         <td>Water Volumetric Charge</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td id="waterVolumeCurrent"></td>
+                                        <td id="waterVolumeCurrentToatl"></td>
+                                        <td id="waterVolumeYear1"></td>
+                                        <td id="waterVolumeYear1Total"></td>
+                                        <td id="waterVolumeYear2"></td>
+                                        <td id="waterVolumeYear2Total"></td>
+                                        <td id="waterVolumeYear3"></td>
+                                        <td id="waterVolumeYear3Total"></td>
+                                        <td id="waterVolumeYear4"></td>
+                                        <td id="waterVolumeYear4Total"></td>
+                                        <td id="waterVolumeYear5"></td>
+                                        <td id="waterVolumeYear5total"></td>
                                     </tr>
                                     <tr class="text-center"
                                         id="sewerMonthlyAccountCharge">
                                         <td>Sewer Monthly Account Charge</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td id="sewerMonthlyCurrent"></td>
+                                        <td id="sewerMonthlyCurrentTotal"></td>
+                                        <td id="sewerMonthlyYear1"></td>
+                                        <td id="sewerMonthlyYear1Total"></td>
+                                        <td id="sewerMonthlyYear2"></td>
+                                        <td id="sewerMonthlyYear2Total"></td>
+                                        <td id="sewerMonthlyYear3"></td>
+                                        <td id="sewerMonthlyYear3Total"></td>
+                                        <td id="sewerMonthlyYear4"></td>
+                                        <td id="sewerMonthlyYear4Total"></td>
+                                        <td id="sewerMonthlyYear5"></td>
+                                        <td id="sewerMonthlyYear5Total"></td>
                                     </tr>
                                     <tr class="text-center"
                                         id="sewerFixedCharge">
                                         <td>Sewer Fixed Charge</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td id="sewerFixedCurrent"></td>
+                                        <td id="sewerFixedCurrentTotal"></td>
+                                        <td id="sewerFixedYear1"></td>
+                                        <td id="sewerFixedYear1Total"></td>
+                                        <td id="sewerFixedYear2"></td>
+                                        <td id="sewerFixedYear2Total"></td>
+                                        <td id="sewerFixedYear3"></td>
+                                        <td id="sewerFixedYear3Total"></td>
+                                        <td id="sewerFixedYear4"></td>
+                                        <td id="sewerFixedYear4Total"></td>
+                                        <td id="sewerFixedYear5"></td>
+                                        <td id="sewerFixedYear5Total"></td>
                                     </tr>
                                     <tr class="text-center"
                                         id="sewerVolumetricCharge">
                                         <td>Sewer Volumetric Charge</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td id="sewerVolumCurrent"></td>
+                                        <td id="sewerVolumCurrentTotal"> </td>
+                                        <td id="sewerVolumYear1"></td>
+                                        <td id="sewerVolumYear1Total"></td>
+                                        <td id="sewerVolumYear2"></td>
+                                        <td id="sewerVolumYear2Total"></td>
+                                        <td id="sewerVolumYear3"></td>
+                                        <td id="sewerVolumYear3Total"></td>
+                                        <td id="sewerVolumYear4"></td>
+                                        <td id="sewerVolumYear4Total"></td>
+                                        <td id="sewerVolumYear5"></td>
+                                        <td id="sewerVolumYear5Total"></td>
                                     </tr>
                                     <tr class="text-center text-bold"
                                         id="total">
                                         <td>Bill Total</td>
-                                        <td colspan="2" ></td>
-                                        <td colspan="2"></td>
-                                        <td colspan="2"></td>
-                                        <td colspan="2"></td>
-                                        <td colspan="2"></td>
-                                        <td colspan="2"></td>
+                                        <td colspan="2" id="currentBillTotal"></td>
+                                        <td colspan="2" id="year1BillTotal"></td>
+                                        <td colspan="2" id="year2BillTotal"></td>
+                                        <td colspan="2" id="year3BillTotal"></td>
+                                        <td colspan="2" id="year4BillTotal"></td>
+                                        <td colspan="2" id="year5BillTotal"></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas> -->
-                    <div class="col-md-8 mt-4">
-                        <div class="row" id="resultStartup">
-                            <div class="col-md-12">
-                                <h1 class="text-center font-weight-bold">See
-                                    what
-                                    you could be saving</h1>
-                                <p class="text-center">Plug in a few quick
-                                    numbers
-                                    and watch your savings add up.</p>
-                                <img
-                                    src="https://s3.amazonaws.com/slh-new-calculators/img/start.svg"
-                                    alt="img" class="center" width="20%"
-                                    height="auto" />
-                                <br />
-                            </div>
-                        </div>
-                        <div class="card d-none postResult" id="postResult"
-                            style="padding: 40px">
-                            <div class="row">
-                                <!--                    <div class="col-md-12 mb-3 text-center">-->
-                                <!--                        <img src="./money.svg" alt="money" class="img-fluid" width="15%">-->
-                                <!--                    </div>-->
-
-                                <div class="col-md-12 mt-3">
-
-                                    <p class="bold">Imagine a bright future
-                                        ahead.
-                                        In <span class="bold result" id="years"></span>
-                                        years, your investment can produce an
-                                        estimated retirement savings worth:
-                                        <span class="bold result
-                                            retirementValue"></span></p>
-                                </div>
-                                <div class="col-md-4 mt-3 center">
-                                    <h3 class="bold retirementValue">$40,000</h3>
-                                    <span class="description text-justify p-0
-                                        m-0">Retirement
-                                        savings</span>
-
-                                </div>
-                                <div class="col-md-4 mt-3 center">
-                                    <h3 class="bold" id="contributions">$40,000</h3>
-                                    <span class="description text-justify p-0
-                                        m-0">
-                                        Total Contributions</span>
-
-                                </div>
-                                <div class="col-md-4 mt-3 center">
-                                    <h3 class="bold" id="growth">$40,000</h3>
-                                    <span class="description text-justify p-0
-                                        m-0">
-                                        Total Growth</span>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="card d-none mt-2 postResult" style="padding:
-                            20px;">
-                            <div id="chart-2"></div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
