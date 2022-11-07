@@ -71,8 +71,6 @@ chart.render();
 
 
 function calculate() {
-    document.getElementById("resultStartup").style.display = "none";
-    document.getElementById("tableResult").style.display = "block";
 
     let waterCustomerType = document.getElementById("waterCustomerType").value;
     let waterSize1 = document.getElementById("waterSize").value;
@@ -632,14 +630,19 @@ function calculate() {
     }
     else {
 
-        currentRateSewer = 0;
-        fy22rateSewer = 0;
-        fy23rateSewer = 0;
-        fy24rateSewer = 0;
-        fy25rateSewer = 0;
-        fy26rateSewer = 0;
+        currentUnitRateSewer = 0;
+        fy22UnitRateSewer = 0;
+        fy23UnitRateSewer = 0;
+        fy24UnitRateSewer = 0;
+        fy25UnitRateSewer = 0;
+        fy26UnitRateSewer = 0;
 
     }
+
+    let element = document.getElementById("tableResult");
+    element.scrollIntoView(1500);
+    document.getElementById("resultStartup").style.display = "none";
+    document.getElementById("tableResult").style.display = "block";
 
 // WaterfixedRow
 document.getElementById('waterFixedCurrent').innerHTML = toComma(currentRate);
@@ -723,6 +726,10 @@ document.getElementById('year2BillTotal').innerHTML = toComma(totalfy23rate);
 document.getElementById('year3BillTotal').innerHTML = toComma(totalfy24rate);
 document.getElementById('year5BillTotal').innerHTML = toComma(totalfy25rate);
 document.getElementById('year4BillTotal').innerHTML = toComma(totalfy26rate);
+
+let totalBillarrya = [totalCurrent,totalfy22rate,totalfy23rate,totalfy24rate,totalfy24rate,totalfy25rate,totalfy26rate]
+
+
 }
 $("#clear").click(function () {
     document.getElementById('waterCustomerType').value = 0;
