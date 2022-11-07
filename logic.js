@@ -728,7 +728,7 @@ document.getElementById('year3BillTotal').innerHTML = toComma(totalfy24rate);
 document.getElementById('year5BillTotal').innerHTML = toComma(totalfy25rate);
 document.getElementById('year4BillTotal').innerHTML = toComma(totalfy26rate);
 
-let totalBillarray = [totalCurrent,totalfy22rate,totalfy23rate,totalfy24rate,totalfy24rate,totalfy25rate,totalfy26rate]
+let totalBillarray = [totalCurrent,totalfy22rate,totalfy23rate,totalfy24rate,totalfy25rate,totalfy26rate]
 let yeararray = [1,2,3,4,5];
 chart.updateOptions({
     series : [
